@@ -129,5 +129,23 @@ while True:
         mw.write(110, 180)
         break
 
+    #подсчет времени
+    new_time = time.time()
+    if int(new_time) - int(current_time) >= 1:
+        timer.set_text(str(int(new_time - start_time)), 40, BlUE)
+        timer.write(0,0)
+        current_time = new_time
+
+    if points >= 5:
+        mw = Label(0, 0, 500, 500, LIGHT_GREEN)
+        mw.set_text('Ты победил!', 60, BLACK)
+        mw.write(140, 180)
+        result_time = Label(90, 230, 250, 250, LIGHT_GREEN)
+        result_time.set_text("Время прохождения:" + str(int(new_time - start_time)) + "сек", 40, BLACK)
+        result_time.write(0, 0)
+        break
+
+    pygame.display.update()
+    clock.tick(fps)
 
 pygame.display.update()
