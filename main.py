@@ -31,3 +31,8 @@ LIGHT_BLUE = (200, 255, 255)
 wait = 0
 points = 0
 
+#создание окна и закрашивание
+window = pygame.display.set_mode((500, 500)) #создание фонового окна
+window.fill(LIGHT_BLUE)
+clock = pygame.time.Clock()
+
