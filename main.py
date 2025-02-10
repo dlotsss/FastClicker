@@ -82,3 +82,26 @@ score_text.write(20, 20)
 score = Label(430, 55, 50, 40, LIGHT_BLUE)
 score.set_text('0', 40, BlUE)
 score.write(0, 0)
+
+#   создание списка карточек
+for i in range(number_cards):
+    new_card = Label(x_start, 170, 70, 100, YELLOW)
+    new_card.outline(DARK_BLUE, 10)
+    new_card.set_text(TEXTCARD, 26)
+    cards.append(new_card)
+    x_start += 100
+#игровой цикл
+while True:
+#изменение надписи клик по карточкам
+    if wait == 0:
+        wait = 20
+        random_card = randint(1,number_cards)
+        for i in range (number_cards):
+            cards[i].set_color(YELLOW)
+            if (i + 1) == random_card:
+                cards[i].write(10, 40)
+            else:
+                cards[i].draw()
+    else:
+        wait -= 1
+
