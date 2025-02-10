@@ -63,6 +63,7 @@ number_cards = 4
 x_start = 50
 cards = []
 
+
 #внесение объектов таймер и время
 start_time = time.time()
 current_time = start_time
@@ -120,6 +121,7 @@ while True:
                     cards[i].draw()
                     score.set_text(str(points), 40, BlUE)
                     score.write(0,0)
+
 #победа или проигрыш
     new_time = time.time()
 
@@ -147,5 +149,4 @@ while True:
 
     pygame.display.update()
     clock.tick(fps)
-
 pygame.display.update()
