@@ -105,3 +105,18 @@ while True:
     else:
         wait -= 1
 
+#обработка карты в которую попала мышь и добавка/убавка баллов
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            x, y = event.pos
+            for i in range(number_cards):
+                if cards[i].collidepoint(x, y):
+                    if (i + 1) == random_card:
+                        cards[i].set_color(GREEN)
+                        points += 1
+                    else:
+                        cards[i].set_color(RED)
+                        points -= 1
+                    cards[i].draw()
+                    score.set_text(str(points), 40, BlUE)
+                    score.write(0,0)
