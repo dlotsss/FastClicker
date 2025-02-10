@@ -36,3 +36,16 @@ window = pygame.display.set_mode((500, 500)) #создание фонового 
 window.fill(LIGHT_BLUE)
 clock = pygame.time.Clock()
 
+#создание класса Area для отслеживания координат объектов
+class Area():
+    def __init__(self, x=0, y=0, width=10, height=10, color=None):
+        self.rect = pygame.Rect(x, y, width, height) #прямоугольник
+        self.fill_color = color #цвет прямоугольника
+    def set_color(self, new_color):
+        self.fill_color = new_color #задать цвет
+    def draw(self):
+        pygame.draw.rect(window, self.fill_color, self.rect) #заполнить прямоугольник цветом
+    def outline(self, frame_color, thickness=5):
+        pygame.draw.rect(window, frame_color, self.rect, thickness) #сделать обводку другим цветом
+    def collidepoint(self, x, y):
+        return self.rect.collidepoint(x, y)
