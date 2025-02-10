@@ -57,3 +57,10 @@ class Label(Area):
     def write(self, shift_x=0, shift_y=0):
         self.draw()
         window.blit(self.image, (self.rect.x + shift_x, self.rect.y + shift_y))
+
+#   создание списка карточек
+number_cards = 4
+x_start = 50
+cards = []
+
+
