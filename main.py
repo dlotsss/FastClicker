@@ -49,3 +49,11 @@ class Area():
         pygame.draw.rect(window, frame_color, self.rect, thickness) #сделать обводку другим цветом
     def collidepoint(self, x, y):
         return self.rect.collidepoint(x, y)
+
+#создание класса Label для заполнения карточки текстом
+class Label(Area):
+    def set_text(self, text, size=12, text_color=(0,0,0)):
+        self.image = pygame.font.SysFont('verdana', size).render(text, True, text_color)
+    def write(self, shift_x=0, shift_y=0):
+        self.draw()
+        window.blit(self.image, (self.rect.x + shift_x, self.rect.y + shift_y))
