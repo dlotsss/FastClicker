@@ -63,4 +63,22 @@ number_cards = 4
 x_start = 50
 cards = []
 
+#внесение объектов таймер и время
+start_time = time.time()
+current_time = start_time
 
+time_text = Label(20, 0, 100, 20, LIGHT_BLUE)
+time_text.set_text(TIME, size, BlUE)
+time_text.write(5, 25)
+
+timer = Label(40, 70, 100, 20, LIGHT_BLUE)
+timer.set_text('0', 40, BlUE)
+timer.write(0,0)
+
+score_text = Label(380, 0, 50, 50, LIGHT_BLUE)
+score_text.set_text('Счёт:', 45, BlUE)
+score_text.write(20, 20)
+
+score = Label(430, 55, 50, 40, LIGHT_BLUE)
+score.set_text('0', 40, BlUE)
+score.write(0, 0)
