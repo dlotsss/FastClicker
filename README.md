@@ -83,7 +83,7 @@ if new_time - start_time >= 11:
     break
 ```
 
-![Libbook Demo](imgs/demo-fastclicker.gif)
+![FastClicker Demo](imgs/demo-fastclicker.gif)
 
 ## **Future Enhancements**
 🚀 **Difficulty Levels** – Add easy, medium, and hard modes.
